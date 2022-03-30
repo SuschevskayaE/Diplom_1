@@ -69,14 +69,9 @@ public class BurgerGetReceiptTest {
         Assert.assertTrue(receiptList[3].contains("Price"));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getReceiptEmptyBurgerFail() {
-
-        try {
             burger.getReceipt();
-        } catch (Exception e) {
-            assert e instanceof NullPointerException;
-        }
     }
 
 }

@@ -36,23 +36,20 @@ public class BurgerIngredientsTest {
     public void removeIngredientBurgerSuccess() {
         burger.removeIngredient(1);
 
-        Assert.assertTrue(burger.getReceipt().contains(nameOne));
-        Assert.assertFalse(burger.getReceipt().contains(nameTwo));
+        Assert.assertTrue(burger.ingredients.get(0).name.contains(nameOne));
+        Assert.assertTrue(burger.ingredients.size() == 1);
 
         burger.removeIngredient(0);
 
-        Assert.assertFalse(burger.getReceipt().contains(nameOne));
-        Assert.assertFalse(burger.getReceipt().contains(nameTwo));
+        Assert.assertTrue(burger.ingredients.isEmpty());
     }
 
     @Test
     public void moveIngredientBurgerSuccess() {
         burger.moveIngredient(0, 1);
 
-        String[] receipt = burger.getReceipt().split("\\r");
-
-        Assert.assertTrue(receipt[2].contains(nameOne));
-        Assert.assertTrue(receipt[1].contains(nameTwo));
+        Assert.assertTrue(burger.ingredients.get(1).name.contains(nameOne));
+        Assert.assertTrue(burger.ingredients.get(0).name.contains(nameTwo));
     }
 
 }

@@ -32,22 +32,22 @@ public class IngredientTest {
     @Test
     public void ingredientGetNameSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        String receivedName = ingredient.getName();
-        Assert.assertEquals(receivedName, name);
+        String actualName = ingredient.getName();
+        Assert.assertEquals(actualName, name);
     }
 
     @Test
     public void ingredientGetPriceSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        float receivedPrice = ingredient.getPrice();
-        Assert.assertEquals(receivedPrice, price, 0.001);
+        float actualPrice = ingredient.getPrice();
+        Assert.assertEquals(actualPrice, price, 0.001);
     }
 
     @Test
     public void ingredientGetTypeSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
-        IngredientType receivedType = ingredient.getType();
-        Assert.assertEquals(receivedType, type);
+        IngredientType actualType = ingredient.getType();
+        Assert.assertEquals(actualType, type);
     }
 
 }

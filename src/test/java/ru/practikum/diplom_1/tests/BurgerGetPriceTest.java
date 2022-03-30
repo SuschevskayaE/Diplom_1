@@ -53,13 +53,9 @@ public class BurgerGetPriceTest {
         Assert.assertEquals(price, 39.98F, 0.001);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getPriceEmptyBurgerFail() {
-        try {
-            burger.getPrice();
-        } catch (Exception e) {
-            assert e instanceof NullPointerException;
-        }
+        burger.getPrice();
     }
 
 }
