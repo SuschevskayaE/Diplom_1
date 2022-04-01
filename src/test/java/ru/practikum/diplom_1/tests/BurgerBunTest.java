@@ -21,6 +21,6 @@ public class BurgerBunTest {
         float price = 19.99F;
         Bun bun = new Bun(name, price);
         burger.setBuns(bun);
-        Assert.assertTrue(burger.bun.name.contains(name));
+        Assert.assertEquals("Название булки не соответствует", name, burger.bun.name);
     }
 }

@@ -33,21 +33,21 @@ public class IngredientTest {
     public void ingredientGetNameSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
         String actualName = ingredient.getName();
-        Assert.assertEquals(actualName, name);
+        Assert.assertEquals("Название неверное", name, actualName);
     }
 
     @Test
     public void ingredientGetPriceSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
         float actualPrice = ingredient.getPrice();
-        Assert.assertEquals(actualPrice, price, 0.001);
+        Assert.assertEquals("Цена неверная", price, actualPrice, 0.001);
     }
 
     @Test
     public void ingredientGetTypeSuccess() {
         Ingredient ingredient = new Ingredient(type, name, price);
         IngredientType actualType = ingredient.getType();
-        Assert.assertEquals(actualType, type);
+        Assert.assertEquals("Тип неверный", type, actualType);
     }
 
 }

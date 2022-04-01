@@ -42,7 +42,7 @@ public class BurgerGetPriceTest {
         burger.addIngredient(ingredientTwo);
 
         float price = burger.getPrice();
-        Assert.assertEquals(price, 66.09F, 0.001);
+        Assert.assertEquals("Цена бургера не соответствует", 66.09F, price, 0.001);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class BurgerGetPriceTest {
         burger.setBuns(bun);
 
         float price = burger.getPrice();
-        Assert.assertEquals(price, 39.98F, 0.001);
+        Assert.assertEquals("Цена булки не соответствует", 39.98F, price, 0.001);
     }
 
     @Test(expected = NullPointerException.class)

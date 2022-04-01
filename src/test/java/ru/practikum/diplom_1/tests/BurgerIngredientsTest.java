@@ -36,8 +36,8 @@ public class BurgerIngredientsTest {
     public void removeIngredientBurgerSuccess() {
         burger.removeIngredient(1);
 
-        Assert.assertTrue(burger.ingredients.get(0).name.contains(nameOne));
-        Assert.assertTrue(burger.ingredients.size() == 1);
+        Assert.assertEquals("Ингредиент удалился неверно", nameOne, burger.ingredients.get(0).name);
+        Assert.assertEquals("Количество ингредиентов неверно", 1, burger.ingredients.size());
 
         burger.removeIngredient(0);
 
@@ -48,8 +48,8 @@ public class BurgerIngredientsTest {
     public void moveIngredientBurgerSuccess() {
         burger.moveIngredient(0, 1);
 
-        Assert.assertTrue(burger.ingredients.get(1).name.contains(nameOne));
-        Assert.assertTrue(burger.ingredients.get(0).name.contains(nameTwo));
+        Assert.assertEquals("Ингредиент не переместился", nameOne, burger.ingredients.get(1).name);
+        Assert.assertEquals("Ингредиент не переместился", nameTwo, burger.ingredients.get(0).name);
     }
 
 }

@@ -32,6 +32,6 @@ public class BurgerAddIngredientTest {
         Ingredient ingredient = new Ingredient(IngredientType.FILLING, name, 16);
         burger.addIngredient(ingredient);
 
-        Assert.assertTrue(burger.ingredients.get(0).name.contains(name));
+        Assert.assertEquals("Название ингридиента не соответствует", name, burger.ingredients.get(0).name);
     }
 }

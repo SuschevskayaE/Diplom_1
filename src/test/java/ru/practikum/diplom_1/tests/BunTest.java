@@ -29,14 +29,14 @@ public class BunTest {
     public void bunGetNameSuccess() {
         Bun bun = new Bun(name, price);
         String actualName = bun.getName();
-        Assert.assertEquals(actualName, name);
+        Assert.assertEquals("Название булки неверное", name, actualName);
     }
 
     @Test
     public void bunGetPriceSuccess() {
         Bun bun = new Bun(name, price);
         float actualPrice = bun.getPrice();
-        Assert.assertEquals(actualPrice, price, 0.001);
+        Assert.assertEquals("Цена булки неверная", price, actualPrice, 0.001);
     }
 
 }
